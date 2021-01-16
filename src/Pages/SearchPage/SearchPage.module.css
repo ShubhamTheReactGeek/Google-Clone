@@ -1,0 +1,149 @@
+.SearchLogo {
+  object-fit: contain;
+  height: 50px;
+  margin-right: 50px;
+}
+
+.Header {
+  z-index: 100;
+  position: sticky;
+  top: 0%;
+  display: flex;
+  background-color: white;
+  align-items: flex-start;
+  padding: 30px;
+  border-bottom: 1px solid lightgray;
+}
+
+.Options {
+  display: flex;
+  color: grey;
+  align-items: center;
+}
+
+.OptionsLeft,
+.OptionsRight {
+  display: flex;
+}
+.Options a {
+  text-decoration: none;
+  color: gray;
+}
+
+.OptionsRight {
+  margin-left: 80px;
+}
+
+.Option {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.Option a {
+  margin-left: 5px;
+}
+
+.Result {
+  margin: 40px 0;
+}
+
+.Results {
+  max-width: 650px;
+  margin-top: 20px;
+  margin-left: 240px;
+  margin-bottom: 100px;
+}
+.ResultCount {
+  color: #70757a;
+  font-size: 14px;
+}
+
+.ResultTitle {
+  text-decoration: none;
+}
+.ResultTitle:hover {
+  text-decoration: underline;
+}
+
+.ResultTitle > h2 {
+  font-weight: 500;
+}
+.ResultSnippet {
+  margin-top: 10px;
+}
+
+.ResultImage {
+  object-fit: contain;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+}
+.loader {
+  color: #ffffff;
+  font-size: 11px;
+  text-indent: -99999em;
+  margin: 55px auto;
+  position: relative;
+  width: 10em;
+  height: 10em;
+  box-shadow: inset 0 0 0 1em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  content: "";
+}
+.loader:before {
+  width: 5.2em;
+  height: 10.2em;
+  background: #0d3bc5;
+  border-radius: 10.2em 0 0 10.2em;
+  top: -0.1em;
+  left: -0.1em;
+  -webkit-transform-origin: 5.1em 5.1em;
+  transform-origin: 5.1em 5.1em;
+  -webkit-animation: load2 2s infinite ease 1.5s;
+  animation: load2 2s infinite ease 1.5s;
+}
+.loader:after {
+  width: 5.2em;
+  height: 10.2em;
+  background: #0d3bc5;
+  border-radius: 0 10.2em 10.2em 0;
+  top: -0.1em;
+  left: 4.9em;
+  -webkit-transform-origin: 0.1em 5.1em;
+  transform-origin: 0.1em 5.1em;
+  -webkit-animation: load2 2s infinite ease;
+  animation: load2 2s infinite ease;
+}
+@-webkit-keyframes load2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,45 @@
+.Home {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  align-items: center;
+}
+
+.Header a {
+  margin-right: 20px;
+  text-decoration: inherit;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 15px;
+}
+
+.Header a:hover {
+  text-decoration: underline;
+}
+
+.HeaderRight {
+  display: flex;
+  align-items: center;
+  min-width: 13vw;
+  justify-content: space-between;
+}
+
+.AppIcon {
+  margin-right: 20px;
+}
+
+.Body {
+  flex: 1;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Body > img {
+  object-fit: contain;
+  height: 100px;
+}
