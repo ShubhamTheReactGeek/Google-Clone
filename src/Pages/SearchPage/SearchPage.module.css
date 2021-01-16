@@ -4,11 +4,47 @@
   margin-right: 50px;
 }
 
+@media screen and (max-width: 1040px) {
+  .Results {
+    margin: 0 auto !important;
+    width: 90% !important;
+  }
+  .Header {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .SearchLogo {
+    margin-right: 0 !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  .HeaderBody {
+    width: 90% !important;
+  }
+  .Options {
+    flex-direction: column !important;
+  }
+  .OptionsRight {
+    margin-top: 20px !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .Options {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  .MuiAvatar-root {
+    display: none !important;
+  }
+}
+
 .Header {
   z-index: 100;
   position: sticky;
   top: 0%;
   display: flex;
+  flex-wrap: wrap;
   background-color: white;
   align-items: flex-start;
   padding: 30px;

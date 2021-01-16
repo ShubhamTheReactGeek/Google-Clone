@@ -19,78 +19,76 @@ const SearchPage = (props) => {
 
   const data = useGoogleSearch(props.term);
   return (
-    <React.Fragment>
-      <div className={classes.SearchPage}>
-        <div className={classes.Header}>
-          <Link to="/">
-            <img
-              className={classes.SearchLogo}
-              src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
-              alt="Google Logo"
-            ></img>
-          </Link>
-          <div className={classes.HeaderBody}>
-            <Search hideButtons SearchPage></Search>
-            <div className={classes.Options}>
-              <div className={classes.OptionsLeft}>
-                <div className={classes.Option}>
-                  <SearchIcon />
-                  <Link to="/all" onClick={redirectHandler}>
-                    All
-                  </Link>
-                </div>
-                <div className={classes.Option}>
-                  <DescriptionIcon />
-                  <Link to="/news" onClick={redirectHandler}>
-                    News
-                  </Link>
-                </div>
-                <div className={classes.Option}>
-                  <ImageIcon />
-                  <Link to="/images" onClick={redirectHandler}>
-                    Images
-                  </Link>
-                </div>
-                <div className={classes.Option}>
-                  <LocalOfferIcon />
-                  <Link to="/shopping" onClick={redirectHandler}>
-                    Shopping
-                  </Link>
-                </div>
-                <div className={classes.Option}>
-                  <RoomIcon />
-                  <Link to="/maps" onClick={redirectHandler}>
-                    Maps
-                  </Link>
-                </div>
-                <div className={classes.Option}>
-                  <MoreVertIcon />
-                  <Link to="/more" onClick={redirectHandler}>
-                    More
-                  </Link>
-                </div>
+    <div className={classes.SearchPage}>
+      <div className={classes.Header}>
+        <Link to="/">
+          <img
+            className={classes.SearchLogo}
+            src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+            alt="Google Logo"
+          ></img>
+        </Link>
+        <div className={classes.HeaderBody}>
+          <Search hideButtons SearchPage></Search>
+          <div className={classes.Options}>
+            <div className={classes.OptionsLeft}>
+              <div className={classes.Option}>
+                <SearchIcon />
+                <Link to="/all" onClick={redirectHandler}>
+                  All
+                </Link>
               </div>
-              <div className={classes.OptionsRight}>
-                <div className={classes.Option}>
-                  <Link to="/settings" onClick={redirectHandler}>
-                    Settings
-                  </Link>
-                </div>
-                <div className={classes.Option}>
-                  <Link to="/tools" onClick={redirectHandler}>
-                    Tools
-                  </Link>
-                </div>
+              <div className={classes.Option}>
+                <DescriptionIcon />
+                <Link to="/news" onClick={redirectHandler}>
+                  News
+                </Link>
+              </div>
+              <div className={classes.Option}>
+                <ImageIcon />
+                <Link to="/images" onClick={redirectHandler}>
+                  Images
+                </Link>
+              </div>
+              <div className={classes.Option}>
+                <LocalOfferIcon />
+                <Link to="/shopping" onClick={redirectHandler}>
+                  Shopping
+                </Link>
+              </div>
+              <div className={classes.Option}>
+                <RoomIcon />
+                <Link to="/maps" onClick={redirectHandler}>
+                  Maps
+                </Link>
+              </div>
+              <div className={classes.Option}>
+                <MoreVertIcon />
+                <Link to="/more" onClick={redirectHandler}>
+                  More
+                </Link>
+              </div>
+            </div>
+            <div className={classes.OptionsRight}>
+              <div className={classes.Option}>
+                <Link to="/settings" onClick={redirectHandler}>
+                  Settings
+                </Link>
+              </div>
+              <div className={classes.Option}>
+                <Link to="/tools" onClick={redirectHandler}>
+                  Tools
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {data.data ? (
+      {data.data && props.term ? (
         <div className={classes.Results}>
           <p className={classes.ResultCount}>
             About {data?.data.searchInformation.formattedTotalResults} results (
-            {data?.data.searchInformation.formattedSearchTime}seconds) for
+            {data?.data.searchInformation.formattedSearchTime}seconds) for{" "}
             {props.term}
           </p>
           {data?.data.items.map((item) => {
@@ -116,9 +114,9 @@ const SearchPage = (props) => {
           })}
         </div>
       ) : (
-        <div class={classes.loader}>Loading...</div>
+        props.term && <div class={classes.loader}>Loading...</div>
       )}
-    </React.Fragment>
+    </div>
   );
 };
 
